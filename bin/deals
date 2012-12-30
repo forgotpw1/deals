@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+
+begin
+  require 'deals/cli'
+rescue LoadError => e
+warn 'Could not load "deals/cli"'
+  exit -1
+end
+
+Deals::CLI.start
