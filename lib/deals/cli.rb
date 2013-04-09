@@ -46,10 +46,11 @@ module Deals
       insert_into_file "Gemfile", "gem 'rails_admin'\n", :after => "gem 'devise'\n"
     end
 
-    desc "inject_carrierwave", "add carrierwave"
+    desc "inject_carrierwave", "add carrierwave and fog"
     def inject_carrierwave
       puts 'add reference to carrierwave in GEMFILE'
       insert_into_file "Gemfile", "gem 'carrierwave'\n", :after => "gem 'rails_admin'\n"
+      insert_into_file "Gemfile", "gem 'fog', '~> 1.3.1'", :after => "gem 'carrierwave'\n" 
       create_file "config/initializers/carrierwave.rb", "require 'carrierwave/orm/activerecord'"
     end
   
