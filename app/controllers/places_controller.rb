@@ -1,4 +1,4 @@
-class PlacesController < ActionController::Base
+class Deals::PlacesController < ActionController::Base
   respond_to :json
 
   def index
